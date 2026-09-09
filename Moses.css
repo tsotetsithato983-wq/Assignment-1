@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+header {
+    background-color: #243447;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #243447;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #243447;
+    color: white;
+    font-size: 14px;
+    margin: 5px 5px 5px 0;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+.book {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background-color: #fafafa;
+}
+
+.book h3 {
+    margin-bottom: 8px;
+}
+
+.book p {
+    margin-bottom: 10px;
+}
+
+.transaction {
+    border-left: 4px solid #243447;
+    background-color: #f8f8f8;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.delete-btn {
+    background-color: #b3261e;
+}
+
+.return-btn {
+    background-color: #367c39;
+}
+
+.borrow-btn {
+    background-color: #3568a8;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #243447;
+    color: white;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+
+    main {
+        width: 94%;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    button {
+        width: 100%;
+        margin-top: 6px;
+    }
+}
