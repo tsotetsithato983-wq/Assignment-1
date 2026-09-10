@@ -3,10 +3,9 @@
 // DOM + LOCAL STORAGE
 // ==========================================
 
-
-// ------------------------------------------
+// ==========================================
 // GET DATA FROM LOCAL STORAGE
-// ------------------------------------------
+// ==========================================
 
 let books = JSON.parse(localStorage.getItem("books")) || [];
 let users = JSON.parse(localStorage.getItem("users")) || [];
@@ -14,16 +13,16 @@ let transactions =
     JSON.parse(localStorage.getItem("transactions")) || [];
 
 
-// ------------------------------------------
+// ==========================================
 // MAIN APP
-// ------------------------------------------
+// ==========================================
 
 const app = document.getElementById("app");
 
 
-// ------------------------------------------
+// ==========================================
 // CREATE HEADER
-// ------------------------------------------
+// ==========================================
 
 const header = document.createElement("header");
 
@@ -39,9 +38,9 @@ header.appendChild(subtitle);
 app.appendChild(header);
 
 
-// ------------------------------------------
+// ==========================================
 // CREATE NAVIGATION
-// ------------------------------------------
+// ==========================================
 
 const nav = document.createElement("nav");
 
@@ -66,9 +65,9 @@ createNavButton("Users", "users");
 app.appendChild(nav);
 
 
-// ------------------------------------------
+// ==========================================
 // MAIN CONTENT
-// ------------------------------------------
+// ==========================================
 
 const content = document.createElement("main");
 
@@ -94,7 +93,6 @@ dashboard.appendChild(dashboardTitle);
 const cards = document.createElement("div");
 
 cards.className = "dashboard-cards";
-
 
 const bookCard = createCard("Total Books", "totalBooks");
 const stockCard = createCard("Total Stock", "totalStock");
@@ -143,9 +141,9 @@ dashboard.appendChild(dashboardTable);
 content.appendChild(dashboard);
 
 
-// ------------------------------------------
+// ==========================================
 // CREATE CARD FUNCTION
-// ------------------------------------------
+// ==========================================
 
 function createCard(label, id) {
 
@@ -188,9 +186,9 @@ booksTitle.textContent = "Book Management";
 booksPage.appendChild(booksTitle);
 
 
-// ------------------------------------------
+// ==========================================
 // BOOK FORM
-// ------------------------------------------
+// ==========================================
 
 const bookForm = document.createElement("form");
 
@@ -314,9 +312,9 @@ bookForm.appendChild(clearBookButton);
 booksPage.appendChild(bookForm);
 
 
-// ------------------------------------------
+// ==========================================
 // BOOK TABLE
-// ------------------------------------------
+// ==========================================
 
 const booksHeading = document.createElement("h3");
 
@@ -567,9 +565,9 @@ transactionTitle.textContent = "Transactions";
 transactionsPage.appendChild(transactionTitle);
 
 
-// ------------------------------------------
+// ==========================================
 // TRANSACTION FORM
-// ------------------------------------------
+// ==========================================
 
 const transactionForm =
     document.createElement("form");
@@ -662,9 +660,9 @@ transactionForm.appendChild(transactionButton);
 transactionsPage.appendChild(transactionForm);
 
 
-// ------------------------------------------
+// ==========================================
 // TRANSACTION TABLE
-// ------------------------------------------
+// ==========================================
 
 const transactionHeading =
     document.createElement("h3");
@@ -794,7 +792,6 @@ function updateTransactionBooks() {
 
     transactionBook.innerHTML = "";
 
-
     books.forEach(function(book, index) {
 
         const option =
@@ -892,9 +889,9 @@ usersTitle.textContent =
 usersPage.appendChild(usersTitle);
 
 
-// ------------------------------------------
+// ==========================================
 // LOGIN
-// ------------------------------------------
+// ==========================================
 
 const loginHeading =
     document.createElement("h3");
@@ -948,18 +945,9 @@ usersPage.appendChild(loginForm);
 usersPage.appendChild(loginMessage);
 
 
-// ------------------------------------------
+// ==========================================
 // USER FORM
-// ------------------------------------------
-
-const userHeading =
-    document.createElement("h3");
-
-userHeading.textContent =
-    "Add / Update User";
-
-usersPage.appendChild(userHeading);
-
+// ==========================================
 
 const userForm =
     document.createElement("form");
@@ -1071,17 +1059,17 @@ userForm.appendChild(clearUserButton);
 usersPage.appendChild(userForm);
 
 
-// ------------------------------------------
+// ==========================================
 // USER TABLE
-// ------------------------------------------
+// ==========================================
 
-const userHeading =
+const registeredUsersHeading =
     document.createElement("h3");
 
-userHeading.textContent =
+registeredUsersHeading.textContent =
     "Registered Users";
 
-usersPage.appendChild(userHeading);
+usersPage.appendChild(registeredUsersHeading);
 
 
 const userTable =
@@ -1457,11 +1445,28 @@ function saveData() {
 // PAGE NAVIGATION
 // ==========================================
 
+// Ensure hidden pages stay hidden
+if (!document.getElementById("library-hidden-style")) {
+
+    const hiddenStyle =
+        document.createElement("style");
+
+    hiddenStyle.id =
+        "library-hidden-style";
+
+    hiddenStyle.textContent =
+        ".hidden { display: none !important; }";
+
+    document.head.appendChild(hiddenStyle);
+}
+
+
 function showPage(pageName) {
 
-    const pages = document.querySelectorAll(
-        "main section"
-    );
+    const pages =
+        document.querySelectorAll(
+            "main section"
+        );
 
 
     pages.forEach(function(page) {
@@ -1470,9 +1475,14 @@ function showPage(pageName) {
     });
 
 
-    document.getElementById(
-        pageName
-    ).classList.remove("hidden");
+    const selectedPage =
+        document.getElementById(pageName);
+
+
+    if (selectedPage) {
+
+        selectedPage.classList.remove("hidden");
+    }
 }
 
 
