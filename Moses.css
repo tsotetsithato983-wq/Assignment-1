@@ -1,129 +1,278 @@
+/* removes the default spacing */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* main page style */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+    background: #f5f0ff;
+    color: #2e1a47;
+    min-height: 100vh;
 }
 
+/* header of the website */
 header {
-    background-color: #243447;
+    background: linear-gradient(135deg, #6b21a8, #9333ea);
     color: white;
+    padding: 25px;
     text-align: center;
-    padding: 30px 15px;
+    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.25);
 }
 
 header h1 {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-size: 30px;
 }
 
+/* navigation buttons */
+nav {
+    background: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+nav button {
+    background: #ede9fe;
+    color: #6b21a8;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* changes the button when the mouse is on it */
+nav button:hover {
+    background: #a855f7;
+    color: white;
+}
+
+/* main content */
 main {
     width: 90%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 30px auto;
 }
 
-.card {
-    background-color: white;
+/* sections on the page */
+section {
+    background: white;
     padding: 25px;
     margin-bottom: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 5px 18px rgba(107, 33, 168, 0.1);
 }
 
-.card h2 {
+/* headings */
+h2 {
+    color: #6b21a8;
     margin-bottom: 20px;
-    color: #243447;
 }
 
-input {
+h3 {
+    color: #7e22ce;
+    margin-bottom: 12px;
+}
+
+/* dashboard cards */
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border-left: 5px solid #9333ea;
+}
+
+.card h3 {
+    color: #6b21a8;
+}
+
+.card p {
+    font-size: 30px;
+    font-weight: bold;
+    color: #9333ea;
+    margin-top: 10px;
+}
+
+/* form section */
+form {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+/* input boxes */
+input,
+select {
     width: 100%;
     padding: 12px;
-    margin-bottom: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
+    border: 2px solid #ddd6fe;
+    border-radius: 9px;
+    font-size: 15px;
+    outline: none;
 }
 
+/* changes the input border when clicked */
+input:focus,
+select:focus {
+    border-color: #a855f7;
+}
+
+/* normal buttons */
 button {
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    background-color: #243447;
+    background: #9333ea;
     color: white;
-    font-size: 14px;
-    margin: 5px 5px 5px 0;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
+/* button hover effect */
 button:hover {
-    opacity: 0.85;
+    background: #6b21a8;
 }
 
+/* borrow button */
+.borrow-btn {
+    background: #7e22ce;
+}
+
+/* return button */
+.return-btn {
+    background: #a855f7;
+}
+
+/* delete button */
+.delete-btn {
+    background: #dc2626;
+}
+
+/* delete button hover */
+.delete-btn:hover {
+    background: #991b1b;
+}
+
+/* table style */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: white;
+}
+
+/* table headings */
+th {
+    background: #6b21a8;
+    color: white;
+    padding: 13px;
+    text-align: left;
+}
+
+/* table information */
+td {
+    padding: 12px;
+    border-bottom: 1px solid #e9d5ff;
+}
+
+/* highlights a row when the mouse is over it */
+tr:hover {
+    background: #faf5ff;
+}
+
+/* book information */
 .book {
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    background-color: #fafafa;
+    background: #faf5ff;
+    border: 1px solid #e9d5ff;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
 }
 
 .book h3 {
-    margin-bottom: 8px;
+    color: #6b21a8;
 }
 
 .book p {
-    margin-bottom: 10px;
+    margin: 6px 0;
 }
 
+/* transaction information */
 .transaction {
-    border-left: 4px solid #243447;
-    background-color: #f8f8f8;
-    padding: 12px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    background: #faf5ff;
+    border-left: 4px solid #9333ea;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
 }
 
-.delete-btn {
-    background-color: #b3261e;
+.transaction strong {
+    color: #6b21a8;
 }
 
-.return-btn {
-    background-color: #367c39;
+/* hides things that are not being used */
+.hidden {
+    display: none !important;
 }
 
-.borrow-btn {
-    background-color: #3568a8;
-}
-
+/* footer at the bottom */
 footer {
+    background: #2e1065;
+    color: white;
     text-align: center;
     padding: 20px;
-    background-color: #243447;
-    color: white;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
-@media (max-width: 600px) {
+/* makes the website work better on phones */
+@media (max-width: 700px) {
 
     main {
         width: 94%;
+        margin: 20px auto;
     }
 
-    .card {
+    section {
         padding: 18px;
     }
 
-    header h1 {
-        font-size: 25px;
+    /* puts the navigation buttons one below another */
+    nav {
+        flex-direction: column;
+        align-items: stretch;
     }
 
-    button {
+    nav button {
         width: 100%;
-        margin-top: 6px;
+    }
+
+    /* allows tables to scroll on small screens */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* makes the cards one below another */
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 24px;
     }
 }
