@@ -27,7 +27,7 @@ const app = document.getElementById("app");
 const header = document.createElement("header");
 
 const title = document.createElement("h1");
-title.textContent = "📚 Community Library";
+title.textContent = "Community Library";
 
 const subtitle = document.createElement("p");
 subtitle.textContent = "Library Management System";
