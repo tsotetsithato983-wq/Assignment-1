@@ -275,5 +275,16 @@ footer {
     header h1 {
         font-size: 24px;
     }
+    
+/* Make the book selection field bigger */
+select {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
 }
 
