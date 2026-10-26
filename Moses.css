@@ -276,3 +276,12 @@ footer {
         font-size: 24px;
     }
 }
+
+/* Enlarge only the dropdown fields */
+select {
+    height: 60px;
+    font-size: 18px;
+    padding: 12px;
+    width: 100%;
+}
+
